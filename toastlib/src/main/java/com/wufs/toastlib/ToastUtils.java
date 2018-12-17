@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by Jimmy on 2016/8/30 0030.
+ * Created by wufs on 2018/12/17 0030.
  */
 public class ToastUtils {
 
@@ -23,6 +23,13 @@ public class ToastUtils {
     public static void showShortCenterToast(Context context, String text) {
         if (mToast != null) mToast.cancel();
         mToast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+        mToast.setGravity(Gravity.CENTER, 0, 0);
+        mToast.show();
+    }
+
+    public static void showLongCenterToast(Context context, String text) {
+        if (mToast != null) mToast.cancel();
+        mToast = Toast.makeText(context, text, Toast.LENGTH_LONG);
         mToast.setGravity(Gravity.CENTER, 0, 0);
         mToast.show();
     }
@@ -54,7 +61,7 @@ public class ToastUtils {
     }
 
     public static void showToastWithImg(Context context, String text, Drawable imgRes) {
-        if (mToast!= null) {
+        if (mToast != null) {
             mToast.cancel();
         }
         mToast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
@@ -72,7 +79,6 @@ public class ToastUtils {
         mToast.setView(textView);
         mToast.show();
     }
-
 
 
 }
